@@ -1,4 +1,5 @@
 #About the app
+================
 
 ## Functionality 
 - Sign Up
