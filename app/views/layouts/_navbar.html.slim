@@ -1,0 +1,16 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
+  .container
+    a.navbar-brand href="#" Sample Stackoverflow
+    button.navbar-toggler aria-controls="navbarResponsive" aria-expanded="false" aria-label=("Toggle navigation") data-target="#navbarResponsive" data-toggle="collapse" type="button" 
+      span.navbar-toggler-icon
+    #navbarResponsive.collapse.navbar-collapse
+      ul.navbar-nav.ml-auto
+        - if current_user
+          - if  current_user.role == 'user'
+            li.nav-item(class="#{'active' if params[:action] == 'index'}")
+              = link_to "Question", questions_path, class: "nav-link"
+              a.nav-link href="#"
+            li.nav-item(class="#{'active' if params[:action] == 'new' && params[:controller] == 'questions'}")
+              = link_to "Add Question", new_question_path, class: "nav-link"
+          li.nav-item
+            = link_to "Sign out", destroy_user_session_path, method: :delete, class: "nav-link"

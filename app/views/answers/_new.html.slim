@@ -1,0 +1,9 @@
+.col-lg-12
+  .pb-4
+    h4 Add your Answer
+    = render partial: '/shared/validation_messages', locals: {object: answer}
+    = form_for [question, answer], remote: true do |f|
+      div
+        = f.cktext_area :body, ckeditor: { language: 'uk'}
+      div.mt-3.text-right
+        = f.submit 'Add Answer', class: 'btn btn-primary'

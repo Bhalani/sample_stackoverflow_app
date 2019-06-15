@@ -1,0 +1,20 @@
+= javascript_include_tag Ckeditor.cdn_url
+
+.row
+  .col-lg-8.offset-lg-2
+    h2 Add Question
+    = render partial: '/shared/validation_messages', locals: { object: @question }
+
+    = form_for @question do |f|
+      .input-group.mb-3
+        .input-group-prepend
+          = f.label :title, class: "input-group-text"
+        = f.text_field :title, class: 'form-control'
+      div
+        = f.cktext_area :description, ckeditor: { language: 'uk'}
+      div.mt-2
+        .input-group.mb-3
+          = f.label :tags
+          = f.select :tag_list, @popular_tags.map(&:name), {}, multiple: true, class: "chosen-select form-control"
+      div.mt-3.text-right
+        = f.submit 'Add Your Question', class: 'btn btn-primary'

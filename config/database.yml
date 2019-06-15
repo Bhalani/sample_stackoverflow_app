@@ -1,0 +1,24 @@
+login: &login
+  adapter: postgresql
+  username: <%= ENV["DATABASE_USERNAME"] %>
+  host: <%= ENV["DATABASE_HOST"] || "localhost" %>
+  password: <%= ENV["DATABASE_PASSWORD"] %>
+
+connection_pool_options: &connection_pool_options
+  prepared_statements: false
+  pool: <%= ENV["DB_POOL"] || ENV["RAILS_MAX_THREADS"] || 5 %>
+  reaping_frequency: <%= ENV["REAPING_FREQUENCY"] || 10 %>
+
+development:
+  <<: *login
+  <<: *connection_pool_options
+  database: sample_stackoverflow_dev
+
+test:
+  <<: *login
+  <<: *connection_pool_options
+  database: sample_stackoverflow_test
+
+production:
+  url:  <%= ENV["DATABASE_URL"] %>
+  <<: *connection_pool_options

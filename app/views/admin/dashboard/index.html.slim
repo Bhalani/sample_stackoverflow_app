@@ -1,0 +1,18 @@
+.row
+  .col-lg-8.offset-lg-2
+    .card
+      .card.card-outline-secondary
+        - @users.each do |user|
+          .card-header
+            = user.name
+          - user.questions.each do |question|
+            .card-body.py-2
+              .question
+                h5
+                  = link_to question.title, question
+                p.mb-1.pl-2
+                  = strip_tags(question.description).truncate(100)
+                ul.tags
+                  - question.tag_list.each do |tag|
+                    li.tag
+                      = tag

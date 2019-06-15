@@ -1,0 +1,2 @@
+$("#answer_<%= @answer.id %>").html("<%= escape_javascript(render partial: '/answers/new', locals: { answer: @answer, question: @question }) %>");
+$("#add-answer").hide();

@@ -1,0 +1,57 @@
+article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+  display: block;
+}
+
+.chosen-container-multi .chosen-choices {
+  height: 34px;
+  padding: 3px 5px;
+
+  li.search-choice {
+    margin: 0px 5px 2px 0;
+    line-height: 18px;
+    .search-choice-close {
+      top: 7px;
+    }
+  }
+}
+
+.question {
+  border-bottom: 1px solid gray;
+  padding: 6px 5px 0;
+
+  p {
+    font-size: 14px;
+  }
+}
+
+ul.tags {
+  padding: 0;
+
+  li.tag {
+    display: inline-block;
+    padding: 4px 10px;
+    margin: 0 5px;
+    border-radius: 50px 50px 50px 50px;
+    -moz-border-radius: 50px 50px 50px 50px;
+    -webkit-border-radius: 50px 50px 50px 50px;
+    border: 0px solid #000000;
+    background: #2787e1;
+    color: #fff;
+    font-size: 12px;
+  }
+}
+
+.post-details {
+  width: auto;
+  padding: 7px 10px;
+  background-color: #f1f1f1;
+}
+
+.answer.body {
+  padding: 20px 5px;
+  border-bottom: 1px solid gray;
+}
+
+.card-header:not(:first-child) {
+  border-top: 1px solid #00000045;
+}

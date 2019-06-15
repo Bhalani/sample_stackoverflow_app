@@ -1,0 +1,6 @@
+.validation.text-danger
+  - if object.errors.full_messages.any?
+    ul
+      - object.errors.full_messages.each do |error_message|
+        li
+          = error_message

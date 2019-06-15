@@ -1,0 +1,17 @@
+.row
+  .col-lg-8.offset-lg-2
+    .card
+      .card.card-outline-secondary
+        .card-header
+          h2 All Question
+        .card-body
+          - @questions.each do |question|
+            .question
+              h5
+                = link_to question.title, question
+              p.mb-1.pl-2
+                = strip_tags(question.description).truncate(100)
+              ul.tags
+                - question.tag_list.each do |tag|
+                  li.tag
+                    = tag
