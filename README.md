@@ -11,7 +11,7 @@ About the app
 ## Demonstrate following thigs
 - Authentication
 - Authorisation for Admin/User
-- Prevent from Brute Force attacke
+- Preventung Brute Force attacke
 - CRUD
 - Ajax
 - Rspec (Unit and Integration testing)
