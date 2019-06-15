@@ -1,4 +1,4 @@
-#About the app
+About the app
 ================
 
 ## Functionality 
